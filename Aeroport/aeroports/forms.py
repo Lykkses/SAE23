@@ -4,15 +4,70 @@ from . import models
 
 class AeroportsForm(ModelForm):
     class Meta:
-        model = models.Groupedemetal
-        fields = ('registre', 'sous_registre', 'nom_du_groupe', 'nationalite', 'annee_de_creation', 'nombre_album', 'courte_description', 'typedemetal')
+        model = models.Aeroports
+        fields = ("")
         labels = {
-            'registre' : _('Registre'),
-            'sous_registre' : _('Sous registre'),
-            'nom_du_groupe' : _('Nom du groupe'),
-            'nationalite' : _('Nationalité'),
-            'annee_de_creation' : _('Année de création'),
-            'nombre_album' : _('Nombre album'),
-            'courte_description' : _('Courte description'),
-            'typedemtal' : _('Type de metal'),
+            "id" : _("Numéro de l'aéroport"),
+            "nom" : _("Nom de l'aéroport"),
+            "pays" : _("Pays de l'aéroport"),
+        }
+
+class PistesForm(ModelForm):
+    class Meta:
+        model = models.Aeroports
+        fields = ("")
+        labels = {
+            "numero" : _("Numéro de piste"),
+            "aeroport" : _("Aeroport"),
+            "longueur" : _("L'ongueur de la piste d'attérissage"),
+        }
+class CompagniesForm(ModelForm):
+    class Meta:
+        model = models.Aeroports
+        fields = ("")
+        labels = {
+            "id" : _("Numéro de la compagnie"),
+            "nom" : _("Nom de la compagnie"),
+            "description" : _("Description de la compagnie"),
+            "pays_de_rattachement" : _("Le pays de la compagnie aérienne"),
+        }
+
+class TypesavionForm(ModelForm):
+    class Meta:
+        model = models.Aeroports
+        fields = ("")
+        labels = {
+            "id" : _("Numéro de l'avion"),
+            "marque" : _("Marque de l'avion"),
+            "model" : _("Model de l'avion"),
+            "description" : _("Description de l'avion"),
+            "image" : _("Image de l'avion"),
+            "longueurpistenecessaire" : _("Longueur de la piste d'attérissage"),
+        }
+
+class AvionsForm(ModelForm):
+    class Meta:
+        model = models.Aeroports
+        fields = ("")
+        labels = {
+            "id" : _("Numéro d'avion"),
+            "nom" : _("Nom de l'avion"),
+            "compagnies" : _("Nom de la compagnie"),
+            "model" : _("Model de l'avion"),
+        }
+
+class VolsForm(ModelForm):
+    class Meta:
+        model = models.Aeroports
+        fields = ("")
+        labels = {
+            "id" : _("Numéro de vol"),
+            "avions" : _("Modèle de l'avion"),
+            "pilote" : _("Nom et prénom du pilote"),
+            "aeroport_de_depart" : _("Nom de l'aéroport de départ"),
+            "date_de_depart" : _("Date de départ"),
+            "heure_de_depart" : _("Heure de départ"),
+            "aeroport_de_darriver" : _("Nom de l'aéroport d'arriver"),
+            "date_de_darriver" : _("Date d'arriver"),
+            "heure_de_arriver" : _("Heure d'arriver"),
         }
