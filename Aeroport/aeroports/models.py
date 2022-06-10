@@ -15,7 +15,7 @@ class Aeroports(models.Model):
         return {"nom":self.nom, "pays":self.pays, "id":self.id}
 
 class Pistes(models.Model):
-    id = models.IntegerField(blank = False)
+    id = models.IntegerField(blank = False, primary_key=True)
     numero = models.IntegerField(blank = False)
     aeroport = models.CharField(max_length=100)
     longueur = models.IntegerField(blank = False)
@@ -34,11 +34,11 @@ class Compagnies(models.Model):
     pays_de_rattachement = models.CharField(max_length=100)
 
     def __str__(self):
-        chaine = f"{self.description}, le pays de rattachement de la compagnie est {self.pays_de_rattachement}."
+        chaine = f"{self.description}. Le pays de rattachement de la compagnie est {self.pays_de_rattachement}."
         return chaine
 
     def dico(self):
-        return {"nom":self.nom, "pays_de_rattachement":self.pays_de_rattachement}
+        return {"description":self.description, "pays_de_rattachement":self.pays_de_rattachement}
 
 class Typeavions(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)
@@ -64,11 +64,11 @@ class Avions(models.Model):
 
 
     def __str__(self):
-        chaine = f"L'avion {self.model} de la marque {self.marque}, est {self.description}, il lui faut pour attérir une piste de {self.longueurpistenecessaire} mètre de long."
+        chaine = f"L'avion {self.id} de la compagnie {self.compagnies}, est un {self.nom}{self.model}."
         return chaine
 
     def dico(self):
-        return {"model":self.model, "marque":self.marque, "description":self.description, "longueurpistenecessaire":self.longueurpistenecessaire}
+        return {"is":self.id, "nom":self.nom, "compagnies":self.compagnies, "model":self.model}
 
 class Vols(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)

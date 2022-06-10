@@ -19,7 +19,7 @@ urlpatterns = [
     path('afficheavions/<int:id>/', avions_views.affiche),
     path('deleteavions/<int:id>/', avions_views.delete),
     path('updateavions/<int:id>/', avions_views.update),
-    path('updatetraitementavions/<int:id>', avions_views.updatetraitement),
+    path('updatetraitementavions/<int:id>/', avions_views.updatetraitement),
 
     #Urls pour la partie compagnies
     path('indexcompagnies/', compagnies_views.index),

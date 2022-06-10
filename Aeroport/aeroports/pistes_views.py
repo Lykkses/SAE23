@@ -18,9 +18,9 @@ def traitement(request):
     if lform.is_valid():
         pistesatterissage = lform.save()
 
-        return HttpResponseRedirect('/pistesatterissage/indexpistes/')
+        return HttpResponseRedirect('/indexpistes/')
     else:
-        return render(request, "basedonnees/pistesatterissage/formulaire.html", {"form": lform})
+        return render(request, "/pistesatterissage/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -46,7 +46,7 @@ def updatetraitement(request, id):
         pistesatterissage = lform.save(commit=False)
         pistesatterissage.id = id
         pistesatterissage.save()
-        return HttpResponseRedirect('/aeroports/indexpistes/')
+        return HttpResponseRedirect('/indexpistes/')
     else:
         return render(request, "basedonnees/pistesatterissage/formulaire.html", {"form": lform, "id": id})
 

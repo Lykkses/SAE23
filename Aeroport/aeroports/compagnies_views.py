@@ -18,9 +18,9 @@ def traitement(request):
     if lform.is_valid():
         compagnies = lform.save()
 
-        return HttpResponseRedirect('/compagnies/indexcompagnies/')
+        return HttpResponseRedirect('/indexcompagnies/')
     else:
-        return render(request, "basedonnees/compagnies/formulaire.html", {"form": lform})
+        return render(request, "compagnies/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -46,7 +46,7 @@ def updatetraitement(request, id):
         compagnies = lform.save(commit=False)
         compagnies.id = id
         compagnies.save()
-        return HttpResponseRedirect('/aeroports/indexcompagnies/')
+        return HttpResponseRedirect('/indexcompagnies/')
     else:
         return render(request, "basedonnees/compagnies/formulaire.html", {"form": lform, "id": id})
 

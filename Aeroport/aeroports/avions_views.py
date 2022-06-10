@@ -18,9 +18,9 @@ def traitement(request):
     if lform.is_valid():
         avions = lform.save()
 
-        return HttpResponseRedirect('/avions/indexavions/')
+        return HttpResponseRedirect('/indexavions/')
     else:
-        return render(request, "basedonnees/avions/formulaire.html", {"form": lform})
+        return render(request, "/avions/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -38,7 +38,7 @@ def affiche(request, id):
 def update(request, id):
     avions = models.Avions.objects.get(pk=id)
     form = AvionsForm(avions.dico())
-    return render(request, 'basedonne/avions/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'basedonnees/avions/formulaire.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -47,7 +47,7 @@ def updatetraitement(request, id):
         avions = lform.save(commit=False)
         avions.id = id
         avions.save()
-        return HttpResponseRedirect('/aeroports/indexavions/')
+        return HttpResponseRedirect('/indexavions/')
     else:
         return render(request, "basedonnees/avions/formulaire.html", {"form": lform, "id": id})
 
