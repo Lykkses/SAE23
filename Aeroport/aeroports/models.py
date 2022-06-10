@@ -6,14 +6,16 @@ class Aeroports(models.Model):
     nom = models.CharField(max_length=100)
     pays = models.CharField(max_length=100)
 
+
     def __str__(self):
-        chaine = f"L'aéroport {self.nom} situé en {self.nom}, possede l'ID {self.id}."
+        chaine = f"L'aéroport {self.nom} situé en {self.pays}, possede l'ID {self.id}."
         return chaine
 
     def dico(self):
-        return {"L'aéroport":self.nom, "situé en":self.pays, "possede l'ID":self.id}
+        return {"nom":self.nom, "pays":self.pays, "id":self.id}
 
 class Pistes(models.Model):
+    id = models.IntegerField(blank = False)
     numero = models.IntegerField(blank = False)
     aeroport = models.CharField(max_length=100)
     longueur = models.IntegerField(blank = False)
@@ -23,7 +25,7 @@ class Pistes(models.Model):
         return chaine
 
     def dico(self):
-        return {"La piste numéro":self.numero, "situé à l'aéroport":self.aeroport, "possede une piste d'une longueur de":self.longueur}
+        return {"id":self.id,"numero":self.numero, "aeroport":self.aeroport, "plongueur":self.longueur}
 
 class Compagnies(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)
@@ -36,7 +38,7 @@ class Compagnies(models.Model):
         return chaine
 
     def dico(self):
-        return {"":self.nom, "le pays de rattachement de la compagnie est ":self.pays_de_rattachement}
+        return {"nom":self.nom, "pays_de_rattachement":self.pays_de_rattachement}
 
 class Typeavions(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)
@@ -52,7 +54,7 @@ class Typeavions(models.Model):
         return chaine
 
     def dico(self):
-        return {"L'avion":self.model, "de la marque":self.marque, "est":self.description, "il lui faut pour attérir une piste de":self.longueurpistenecessaire}
+        return {"model":self.model, "marque":self.marque, "description":self.description, "longueurpistenecessaire":self.longueurpistenecessaire}
 
 class Avions(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)
@@ -66,18 +68,22 @@ class Avions(models.Model):
         return chaine
 
     def dico(self):
-        return {"L'avion":self.model, "de la marque":self.marque, "est":self.description, "il lui faut pour attérir une piste de":self.longueurpistenecessaire}
+        return {"model":self.model, "marque":self.marque, "description":self.description, "longueurpistenecessaire":self.longueurpistenecessaire}
 
 class Vols(models.Model):
     id = models.IntegerField(blank = False, primary_key=True)
-    avions = models.CharField(max_length=100)
+    #avions = models.CharField(max_length=100)
+    avions = models.ForeignKey(Avions, on_delete = models.CASCADE)
     pilote = models.CharField(max_length=100)
-    aeroport_de_depart = models.CharField(max_length=100)
-    aeroport_de_darriver = models.CharField(max_length=100)
+    #aeroport_de_depart = models.CharField(max_length=100)
+    aeroport_de_depart = models.ForeignKey(Aeroports, on_delete = models.CASCADE, related_name = "Aeroport_Depart")
+    #aeroport_de_darriver = models.CharField(max_length=100)
+    aeroport_de_darriver = models.ForeignKey(Aeroports, on_delete = models.CASCADE, related_name = "Aeroport_Arrivee")
     date_de_depart = models.DateField(null=True, blank=True)
     date_de_darriver = models.DateField(null=True, blank=True)
     heure_de_depart = models.TimeField(auto_now=False, auto_now_add=False)
     heure_de_darriver = models.TimeField(auto_now=False, auto_now_add=False)
+
 
 
     def __str__(self):
@@ -85,4 +91,4 @@ class Vols(models.Model):
         return chaine
 
     def dico(self):
-        return {"Le vol numéro":self.id, "avec l'avion":self.avions, "avec le pilote":self.pilote, ", décollera à ":self.heure_de_depart, "le":self.date_de_depart, "à":self.aeroport_de_depart, "Le vol arrivera à destination à":self.heure_de_darriver, "le":self.date_de_darriver, "à l'aéroport de":self.aeroport_de_darriver}
+        return {"id":self.id, "avions":self.avions, "pilote":self.pilote, "heure_de_depart":self.heure_de_depart, "date_de_depart":self.date_de_depart, "aeroport_de_depart":self.aeroport_de_depart, "heure_de_darriver":self.heure_de_darriver, "date_de_darriver":self.date_de_darriver, "aeroport_de_darriver":self.aeroport_de_darriver}

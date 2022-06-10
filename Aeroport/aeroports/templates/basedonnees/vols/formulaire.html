@@ -5,6 +5,15 @@
     <title>Title</title>
 </head>
 <body>
-
+    <h1> Saisie d'un nouveau groupe de metal </h1>
+    {% if id != '' %}
+        <form method="post" action="/groupedemetal/updatetraitement/{{id}}/">
+     {% else %}
+        <form method="post" action="/groupedemetal/traitement/">
+     {% endif %}
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="envoyez les données"/>
+  </form>
 </body>
 </html>
