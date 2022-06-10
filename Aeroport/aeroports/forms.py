@@ -5,7 +5,7 @@ from . import models
 class AeroportsForm(ModelForm):
     class Meta:
         model = models.Aeroports
-        fields = ("")
+        fields = ("id", "nom", "pays")
         labels = {
             "id" : _("Numéro de l'aéroport"),
             "nom" : _("Nom de l'aéroport"),
@@ -14,8 +14,8 @@ class AeroportsForm(ModelForm):
 
 class PistesForm(ModelForm):
     class Meta:
-        model = models.Aeroports
-        fields = ("")
+        model = models.Pistes
+        fields = ("numero", "aeroport", "longueur")
         labels = {
             "numero" : _("Numéro de piste"),
             "aeroport" : _("Aeroport"),
@@ -23,8 +23,8 @@ class PistesForm(ModelForm):
         }
 class CompagniesForm(ModelForm):
     class Meta:
-        model = models.Aeroports
-        fields = ("")
+        model = models.Compagnies
+        fields = ("id", "nom", "description", "pays_de_rattachement")
         labels = {
             "id" : _("Numéro de la compagnie"),
             "nom" : _("Nom de la compagnie"),
@@ -34,8 +34,8 @@ class CompagniesForm(ModelForm):
 
 class TypesavionForm(ModelForm):
     class Meta:
-        model = models.Aeroports
-        fields = ("")
+        model = models.Typeavions
+        fields = ("id", "marque", "model", "description", "image", "longueurpistenecessaire")
         labels = {
             "id" : _("Numéro de l'avion"),
             "marque" : _("Marque de l'avion"),
@@ -47,8 +47,8 @@ class TypesavionForm(ModelForm):
 
 class AvionsForm(ModelForm):
     class Meta:
-        model = models.Aeroports
-        fields = ("")
+        model = models.Avions
+        fields = ("id", "nom", "compagnies", "model")
         labels = {
             "id" : _("Numéro d'avion"),
             "nom" : _("Nom de l'avion"),
@@ -58,8 +58,8 @@ class AvionsForm(ModelForm):
 
 class VolsForm(ModelForm):
     class Meta:
-        model = models.Aeroports
-        fields = ("")
+        model = models.Vols
+        fields = ("id", "avions", "pilote", "aeroport_de_depart", "date_de_depart", "heure_de_depart", "aeroport_de_darriver", "date_de_darriver", "heure_de_darriver")
         labels = {
             "id" : _("Numéro de vol"),
             "avions" : _("Modèle de l'avion"),
@@ -69,5 +69,5 @@ class VolsForm(ModelForm):
             "heure_de_depart" : _("Heure de départ"),
             "aeroport_de_darriver" : _("Nom de l'aéroport d'arriver"),
             "date_de_darriver" : _("Date d'arriver"),
-            "heure_de_arriver" : _("Heure d'arriver"),
+            "heure_de_darriver" : _("Heure d'arriver"),
         }
