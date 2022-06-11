@@ -1,13 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>HELLOOOOOOOO</p>
-{%for l in liste %}
-    <li> {{l}} <a href="/afficheavions/{{l.id}}/"> Plus d'informations </a> <a href="/updateavions/{{l.id}}/"> Mettre à jour </a> <a href="/deleteavions/{{l.id}}/"> Suppression </a></li>
-{% endfor %}
-</body>
-</html>
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Avions
+{% endblock %}
+
+{% block title2 %}
+Liste des Avions
+{% endblock %}
+
+{% block article %}
+
+{% endblock %}

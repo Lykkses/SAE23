@@ -9,8 +9,8 @@ urlpatterns = [
     path('', views.index),
     path('affiche/<int:id>/', views.affiche),
     path('update/<int:id>/', views.update),
-    path('updatetraitement/<int:id>', views.updatetraitement),
-    path('delete/<int:id>', views.update),
+    path('updatetraitement/<int:id>/', views.updatetraitement),
+    path('delete/<int:id>/', views.update),
 
     #Urls pour la partie avions
     path('indexavions/', avions_views.index),
@@ -28,7 +28,7 @@ urlpatterns = [
     path('affichecompagnies/<int:id>/', compagnies_views.affiche),
     path('deletecompagnies/<int:id>/', compagnies_views.delete),
     path('updatecompagnies/<int:id>/', compagnies_views.update),
-    path('updatetraitementcompagnies/<int:id>', compagnies_views.updatetraitement),
+    path('updatetraitementcompagnies/<int:id>/', compagnies_views.updatetraitement),
 
     #Urls pour la partie pistes
     path('indexpistes/', pistes_views.index),
@@ -37,7 +37,7 @@ urlpatterns = [
     path('affichepistes/<int:id>/', pistes_views.affiche),
     path('deletepistes/<int:id>/', pistes_views.delete),
     path('updatepistes/<int:id>/', pistes_views.update),
-    path('updatetraitementpistes/<int:id>', pistes_views.updatetraitement),
+    path('updatetraitementpistes/<int:id>/', pistes_views.updatetraitement),
 
     #Urls pour la partie types d'avion
     path('indextypesavions/', typesavions_views.index),
@@ -46,7 +46,7 @@ urlpatterns = [
     path('affichetypesavions/<int:id>/', typesavions_views.affiche),
     path('deletetypesavions/<int:id>/', typesavions_views.delete),
     path('updatetypesavions/<int:id>/', typesavions_views.update),
-    path('updatetraitementtypesavions/<int:id>', typesavions_views.updatetraitement),
+    path('updatetraitementtypesavions/<int:id>/', typesavions_views.updatetraitement),
 
     #Urls pour la partie vols
     path('indexvols/', vols_views.index),
@@ -55,6 +55,6 @@ urlpatterns = [
     path('affichevols/<int:id>/', vols_views.affiche),
     path('deletevols/<int:id>/', vols_views.delete),
     path('updatevols/<int:id>/', vols_views.update),
-    path('updatetraitementvols/<int:id>', vols_views.updatetraitement),
+    path('updatetraitementvols/<int:id>/', vols_views.updatetraitement),
 
 ]

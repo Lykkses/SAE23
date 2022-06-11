@@ -16,11 +16,10 @@ def formulaire(request):
 def traitement(request):
     lform = CompagniesForm(request.POST)
     if lform.is_valid():
-        compagnies = lform.save()
-
+        lform.save()
         return HttpResponseRedirect('/indexcompagnies/')
     else:
-        return render(request, "compagnies/formulaire.html", {"form": lform})
+        return render(request, "basedonnees/compagnies/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -37,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     compagnies = models.Compagnies.objects.get(pk=id)
     form = CompagniesForm(compagnies.dico())
-    return render(request, 'basedonne/compagnies/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'basedonne/compagnies/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -48,10 +47,9 @@ def updatetraitement(request, id):
         compagnies.save()
         return HttpResponseRedirect('/indexcompagnies/')
     else:
-        return render(request, "basedonnees/compagnies/formulaire.html", {"form": lform, "id": id})
+        return render(request, "basedonnees/compagnies/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):
-    compagnies = models.Compagnies.objects.get(pk=id)
     compagnies.delete()
     return HttpResponseRedirect('/aeroports/indexcompagnies/')

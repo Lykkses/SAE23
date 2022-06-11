@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Types d'Avions
+{% endblock %}
 
-</body>
-</html>
+{% block title2 %}
+Saisie d'un nouveau type d'Avion
+{% endblock %}
+
+{% block article1 %}
+    <article class="article2">
+        <form method="post" action="/traitementtypesavions/">
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="envoyez les données"/>
+        </form>
+        </form>
+    </article>
+{% endblock %}

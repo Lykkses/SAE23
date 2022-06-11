@@ -1,10 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-    <p>HELLOOOOOOOO</p>
-</body>
-</html>
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Aéroport
+{% endblock %}
+
+{% block title2 %}
+Liste des Aeroports
+{% endblock %}
+
+{% block article %}
+{% for aeroport in liste %}
+        <li> {{aeroport}} <a href="/aeroport/update/{{aeroport.id}}/"> Update </a></li>
+{% endfor %}
+{% endblock %}
+

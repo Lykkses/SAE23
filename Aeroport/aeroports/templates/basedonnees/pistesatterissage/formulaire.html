@@ -1,15 +1,15 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Aéroport
+Pistes
 {% endblock %}
 
 {% block title2 %}
-Saisie d'un nouvel Aeroport
+Saisie d'une nouvelle Piste
 {% endblock %}
 
 {% block article1 %}
     <article class="article2">
-        <form method="post" action="/traitement/">
+        <form method="post" action="/traitementpistes/">
     {% csrf_token %}
     {{form.as_ul}}
     <input type="submit" value="envoyez les données"/>

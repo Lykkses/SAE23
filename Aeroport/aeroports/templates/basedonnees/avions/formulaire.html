@@ -1,19 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1> Saisie d'un nouveau groupe de metal </h1>
-    {% if id != '' %}
-        <form method="post" action="/updatetraitementavions/{{id}}/">
-     {% else %}
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Avions
+{% endblock %}
+
+{% block title2 %}
+Saisie d'un nouvel Avion
+{% endblock %}
+
+{% block article1 %}
+    <article class="article2">
         <form method="post" action="/traitementavions/">
-     {% endif %}
     {% csrf_token %}
     {{form.as_ul}}
     <input type="submit" value="envoyez les données"/>
-  </form>
-</body>
-</html>
+        </form>
+        </form>
+    </article>
+{% endblock %}

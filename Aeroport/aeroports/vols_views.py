@@ -16,9 +16,8 @@ def formulaire(request):
 def traitement(request):
     lform = VolsForm(request.POST)
     if lform.is_valid():
-        vols = lform.save()
-
-        return HttpResponseRedirect('/aeroport/indexvols/')
+        lform.save()
+        return HttpResponseRedirect('/indexvols/')
     else:
         return render(request, "basedonnees/vols/formulaire.html", {"form": lform})
 
@@ -37,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     vols = models.Vols.objects.get(pk=id)
     form = VolsForm(vols.dico())
-    return render(request, 'basedonne/vols/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'basedonne/vols/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -48,7 +47,7 @@ def updatetraitement(request, id):
         vols.save()
         return HttpResponseRedirect('/aeroports/indexvols/')
     else:
-        return render(request, "basedonnees/vols/formulaire.html", {"form": lform, "id": id})
+        return render(request, "basedonnees/vols/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):

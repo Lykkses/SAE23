@@ -16,11 +16,10 @@ def formulaire(request):
 def traitement(request):
     lform = PistesForm(request.POST)
     if lform.is_valid():
-        pistesatterissage = lform.save()
-
+        lform.save()
         return HttpResponseRedirect('/indexpistes/')
     else:
-        return render(request, "/pistesatterissage/formulaire.html", {"form": lform})
+        return render(request, "basedonnees/pistesatterissage/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -31,13 +30,13 @@ def index(request):
 def affiche(request, id):
     pistesatterissage = models.Pistes.objects.get(pk=id)
     liste = models.Aeroports.objects.filter(aeroport=id)
-    return render(request, 'basedonnees/pistesatterissage/affiche.html', {"pisteatterissage": pistesatterissage, 'liste': liste})
+    return render(request, 'basedonnees/pistesatterissage/affiche.html', {"pistesatterissage": pistesatterissage, 'liste': liste})
 
 
 def update(request, id):
     pistesatterissage = models.Pistes.objects.get(pk=id)
     form = PistesForm(pistesatterissage.dico())
-    return render(request, 'basedonne/pistesatterissage/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'basedonne/pistesatterissage/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -48,7 +47,7 @@ def updatetraitement(request, id):
         pistesatterissage.save()
         return HttpResponseRedirect('/indexpistes/')
     else:
-        return render(request, "basedonnees/pistesatterissage/formulaire.html", {"form": lform, "id": id})
+        return render(request, "basedonnees/pistesatterissage/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):

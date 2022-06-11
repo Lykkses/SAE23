@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    {% load static %}
     <meta charset="UTF-8">
-    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{%static '/style.css'%}">
+    <title>{% block title %}
+        mon titre
+        {% endblock %}
+    </title>
 </head>
-<body>
+<body class="bodyFORM">
+<header class="headerFORM">
+		<h1 class="grandtitreFORM">{% block title2 %} {% endblock %}</h1>
+		<nav class="navFORM">
+            <a href="/formulaire/" style="color: black"> Ajouter un Aeroport</a>
+			<a href="/formulaireavions/" style="color: black"> Ajouter un Avion</a>
+			<a href="/formulairecompagnies/" style="color: black"> Ajouter une Compagnie </a>
+            <a href="/formulairepistes/" style="color: black"> Ajouter une Piste d'Attérissage </a>
+            <a href="/formulairetypesavions/" style="color: black"> Ajouter un Type d'Avions </a>
+            <a href="/formulairevols/" style="color: black"> Ajouter un Vol </a>
+		</nav>
+</header>
+    <article class="article1">
+    {% block article1 %}
 
+    {% endblock %}
+    </article>
 </body>
 </html>

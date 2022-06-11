@@ -1,10 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Compagnies
+{% endblock %}
 
-</body>
-</html>
+{% block title2 %}
+Saisie d'une nouvelle Compagnie
+{% endblock %}
+
+{% block article1 %}
+    <article class="article2">
+        <form method="post" action="/traitementcompagnies/">
+    {% csrf_token %}
+    {{form.as_ul}}
+    <input type="submit" value="envoyez les données"/>
+        </form>
+        </form>
+    </article>
+{% endblock %}

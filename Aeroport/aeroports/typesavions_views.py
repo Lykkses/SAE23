@@ -16,11 +16,10 @@ def formulaire(request):
 def traitement(request):
     lform = TypesavionForm(request.POST)
     if lform.is_valid():
-        typesavions = lform.save()
-
+        lform.save()
         return HttpResponseRedirect('/indextypesavions/')
     else:
-        return render(request, "/typesavions/formulaire.html", {"form": lform})
+        return render(request, "basedonnees/typesavions/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -37,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     typesavions = models.Typeavions.objects.get(pk=id)
     form = TypesavionForm(typesavions.dico())
-    return render(request, 'basedonne/typesavions/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'basedonne/typesavions/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -48,7 +47,7 @@ def updatetraitement(request, id):
         typesavions.save()
         return HttpResponseRedirect('/indextypesavions/')
     else:
-        return render(request, "basedonnees/typesavions/formulaire.html", {"form": lform, "id": id})
+        return render(request, "basedonnees/typesavions/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):

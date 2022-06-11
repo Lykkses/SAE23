@@ -10,17 +10,15 @@ def formulaire(request):
     else:
         form = AeroportsForm()
         id = ""
-        return render(request, "basedonnees/aeroport/formulaire.html", {"form": form, "id": id})
-
+        return render(request, "basedonnees/aeroport/formulaire.html", {"form": form})
 
 def traitement(request):
     lform = AeroportsForm(request.POST)
     if lform.is_valid():
-        aeroport = lform.save()
-
+        lform.save()
         return HttpResponseRedirect('/indexaeroport/')
     else:
-        return render(request, "/aeroport/formulaire.html", {"form": lform})
+        return render(request, "basedonnees/aeroport/formulaire.html", {"form": lform})
 
 
 def index(request):
@@ -37,7 +35,7 @@ def affiche(request, id):
 def update(request, id):
     aeroport = models.Aeroports.objects.get(pk=id)
     form = AeroportsForm(aeroport.dico())
-    return render(request, 'basedonne/aeroport/formulaire.html', {'form': form, 'id': id})
+    return render(request, 'aeroport/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
@@ -46,9 +44,9 @@ def updatetraitement(request, id):
         aeroport = lform.save(commit=False)
         aeroport.id = id
         aeroport.save()
-        return HttpResponseRedirect('/indexaeroport/')
+        return HttpResponseRedirect('/aeroports/')
     else:
-        return render(request, "basedonnees/aeroport/formulaire.html", {"form": lform, "id": id})
+        return render(request, "aeroport/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):
