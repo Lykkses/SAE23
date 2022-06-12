@@ -7,6 +7,14 @@ Pistes
 Liste des Pistes
 {% endblock %}
 
-{% block article %}
+{% block article1 %}
+<ol>
+    {% for pistes in liste %}
+        <li> {{pistes}} <a href="/pistes/update/{{pistes.id}}/"> Update </a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+
+{% block article2 %}
 
 {% endblock %}

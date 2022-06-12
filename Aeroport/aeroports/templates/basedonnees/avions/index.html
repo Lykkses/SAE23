@@ -7,6 +7,14 @@ Avions
 Liste des Avions
 {% endblock %}
 
-{% block article %}
+{% block article1 %}
+<ol>
+    {% for avions in liste %}
+        <li> {{avions}} <a href="/avions/update/{{avions.id}}/"> Update </a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+
+{% block article2 %}
 
 {% endblock %}

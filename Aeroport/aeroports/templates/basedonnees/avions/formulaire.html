@@ -8,7 +8,7 @@ Saisie d'un nouvel Avion
 {% endblock %}
 
 {% block article1 %}
-    <article class="article2">
+    <article>
         <form method="post" action="/traitementavions/">
     {% csrf_token %}
     {{form.as_ul}}
@@ -16,4 +16,10 @@ Saisie d'un nouvel Avion
         </form>
         </form>
     </article>
+{% endblock %}
+
+{% block article2 %}
+    <nav class="navFORM">
+            <a href="/indexavions/" style="color: black"> Liste des Avions </a>
+	</nav>
 {% endblock %}

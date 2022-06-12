@@ -7,6 +7,14 @@ Types d'Avions
 Liste des Types d'Avions
 {% endblock %}
 
-{% block article %}
+{% block article1 %}
+<ol>
+    {% for typesavions in liste %}
+        <li> {{typesavions}} <a href="/typesavions/update/{{typesavions.id}}/"> Update </a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+
+{% block article2 %}
 
 {% endblock %}

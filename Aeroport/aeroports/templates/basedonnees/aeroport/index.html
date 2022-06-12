@@ -7,9 +7,15 @@ Aéroport
 Liste des Aeroports
 {% endblock %}
 
-{% block article %}
-{% for aeroport in liste %}
+{% block article1 %}
+<ol>
+    {% for aeroport in liste %}
         <li> {{aeroport}} <a href="/aeroport/update/{{aeroport.id}}/"> Update </a></li>
-{% endfor %}
+    {% endfor %}
+</ol>
+{% endblock %}
+
+{% block article2 %}
+
 {% endblock %}
 

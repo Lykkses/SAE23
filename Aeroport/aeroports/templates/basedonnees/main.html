@@ -12,19 +12,56 @@
 <body class="bodyFORM">
 <header class="headerFORM">
 		<h1 class="grandtitreFORM">{% block title2 %} {% endblock %}</h1>
-		<nav class="navFORM">
-            <a href="/formulaire/" style="color: black"> Ajouter un Aeroport</a>
-			<a href="/formulaireavions/" style="color: black"> Ajouter un Avion</a>
-			<a href="/formulairecompagnies/" style="color: black"> Ajouter une Compagnie </a>
-            <a href="/formulairepistes/" style="color: black"> Ajouter une Piste d'Attérissage </a>
-            <a href="/formulairetypesavions/" style="color: black"> Ajouter un Type d'Avions </a>
-            <a href="/formulairevols/" style="color: black"> Ajouter un Vol </a>
+    <article>
+		<nav>
+            <ul>
+                <li class="menu-deroulant"> <a href="#"> Aeroport</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulaire/"> Ajouter un Aeroport</a></li>
+                        <li><a href="/indexaeroport/"> Liste des Aeroports</a></li>
+                    </ul>
+                </li>
+                <li class="menu-deroulant"> <a href="#"> Avions</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulaireavions/"> Ajouter un Avion</a></li>
+                        <li><a href="/indexavions/"> Liste des Avions</a></li>
+                    </ul>
+                </li>
+                <li class="menu-deroulant"> <a href="#"> Compagnies</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulairecompagnies/"> Ajouter une Compagnie</a></li>
+                        <li><a href="/indexcompagnies/"> Liste des Compagnies</a></li>
+                    </ul>
+                </li>
+                <li class="menu-deroulant"> <a href="#"> Pistes</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulairepistes/"> Ajouter une Piste</a></li>
+                        <li><a href="/indexpistes/"> Liste des Pistes</a></li>
+                    </ul>
+                </li>
+                <li class="menu-deroulant"> <a href="#"> Types Avions</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulairetypesavions/"> Ajouter un Type d'Avion</a></li>
+                        <li><a href="/indextypesavions/"> Liste des Types d'Avions</a></li>
+                    </ul>
+                </li>
+                <li class="menu-deroulant"> <a href="#"> Vols</a>
+                    <ul class="sous-menu">
+                        <li><a href="/formulairevols/"> Ajouter un Vol</a></li>
+                        <li><a href="/indexvols/"> Liste des Vols</a></li>
+                    </ul>
+                </li>
+            </ul>
 		</nav>
+    </article>
 </header>
     <article class="article1">
     {% block article1 %}
 
     {% endblock %}
+
     </article>
+<br>
+
 </body>
 </html>

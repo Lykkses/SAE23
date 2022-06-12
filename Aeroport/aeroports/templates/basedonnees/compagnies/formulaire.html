@@ -8,7 +8,7 @@ Saisie d'une nouvelle Compagnie
 {% endblock %}
 
 {% block article1 %}
-    <article class="article2">
+    <article>
         <form method="post" action="/traitementcompagnies/">
     {% csrf_token %}
     {{form.as_ul}}
@@ -16,4 +16,10 @@ Saisie d'une nouvelle Compagnie
         </form>
         </form>
     </article>
+{% endblock %}
+
+{% block article2 %}
+    <nav class="navFORM">
+            <a href="/indexcompagnies/" style="color: black"> Liste des Compagnies </a>
+	</nav>
 {% endblock %}

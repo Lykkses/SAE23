@@ -7,6 +7,14 @@ Vols
 Liste des Vols
 {% endblock %}
 
-{% block article %}
+{% block article1 %}
+<ol>
+    {% for vols in liste %}
+        <li> {{vols}} <a href="/vols/update/{{vols.id}}/"> Update </a></li>
+    {% endfor %}
+</ol>
+{% endblock %}
+
+{% block article2 %}
 
 {% endblock %}

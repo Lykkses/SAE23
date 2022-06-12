@@ -8,7 +8,7 @@ Saisie d'un nouveau Vol
 {% endblock %}
 
 {% block article1 %}
-    <article class="article2">
+    <article>
         <form method="post" action="/traitementvols/">
     {% csrf_token %}
     {{form.as_ul}}
@@ -16,4 +16,10 @@ Saisie d'un nouveau Vol
         </form>
         </form>
     </article>
+{% endblock %}
+
+{% block article2 %}
+    <nav class="navFORM">
+            <a href="/indexvols/" style="color: black"> Liste des Vols </a>
+	</nav>
 {% endblock %}
