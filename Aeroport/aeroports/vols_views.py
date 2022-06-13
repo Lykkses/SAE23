@@ -36,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     vols = models.Vols.objects.get(pk=id)
     form = VolsForm(vols.dico())
-    return render(request, 'basedonne/vols/update.html', {'form': form, 'id': id})
+    return render(request, 'basedonnees/vols/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):

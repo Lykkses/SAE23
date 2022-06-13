@@ -36,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     pistesatterissage = models.Pistes.objects.get(pk=id)
     form = PistesForm(pistesatterissage.dico())
-    return render(request, 'basedonne/pistesatterissage/update.html', {'form': form, 'id': id})
+    return render(request, 'basedonnees/pistesatterissage/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):

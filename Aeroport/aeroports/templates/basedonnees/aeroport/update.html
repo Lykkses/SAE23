@@ -9,7 +9,7 @@ Saisie d'un nouvel Aeroport
 
 {% block article1 %}
     <article class="article2">
-        <form method="post" action="aeroport/updatetraitement/{{id}}/">
+        <form method="post" action="/updatetraitement/{{id}}/">
     {% csrf_token %}
     {{form.as_ul}}
     <input type="submit" value="envoyez les données"/>

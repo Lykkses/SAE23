@@ -35,7 +35,7 @@ def affiche(request, id):
 def update(request, id):
     aeroport = models.Aeroports.objects.get(pk=id)
     form = AeroportsForm(aeroport.dico())
-    return render(request, 'aeroport/update.html', {'form': form, 'id': id})
+    return render(request, 'basedonnees/aeroport/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):

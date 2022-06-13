@@ -1,20 +1,20 @@
 from django.shortcuts import render, HttpResponseRedirect
-from . forms import TypesavionForm
+from . forms import TypeavionForm
 from . import models
 
 
 def formulaire(request):
     if request.method == "POST":
-        form = TypesavionForm(request)
+        form = TypeavionForm(request)
         return render(request, "basedonnees/typesavions/formulaire.html", {"form": form})
     else:
-        form = TypesavionForm()
+        form = TypeavionForm()
         id = ""
         return render(request, "basedonnees/typesavions/formulaire.html", {"form": form, "id": id})
 
 
 def traitement(request):
-    lform = TypesavionForm(request.POST)
+    lform = TypeavionForm(request.POST, request.FILES)
     if lform.is_valid():
         lform.save()
         return HttpResponseRedirect('/indextypesavions/')
@@ -23,24 +23,24 @@ def traitement(request):
 
 
 def index(request):
-    liste = list(models.Pistes.objects.all())
+    liste = list(models.Typeavions.objects.all())
     return render(request, 'basedonnees/typesavions/index.html', {'liste': liste})
 
 
 def affiche(request, id):
-    typesavions = models.Pistes.objects.get(pk=id)
+    typesavions = models.Typeavions.objects.get(pk=id)
     liste = models.Avions.objects.filter(avions=id)
     return render(request, 'basedonnees/typesavions/affiche.html', {"typesavions": typesavions, 'liste': liste})
 
 
 def update(request, id):
     typesavions = models.Typeavions.objects.get(pk=id)
-    form = TypesavionForm(typesavions.dico())
-    return render(request, 'basedonne/typesavions/update.html', {'form': form, 'id': id})
+    form = TypeavionForm(typesavions.dico())
+    return render(request, 'basedonnees/typesavions/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):
-    lform = TypesavionForm(request.POST)
+    lform = TypeavionForm(request.POST, request.FILES)
     if lform.is_valid():
         typesavions = lform.save(commit=False)
         typesavions.id = id

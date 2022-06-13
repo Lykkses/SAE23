@@ -9,7 +9,7 @@ Saisie d'un nouveau type d'Avion
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitementtypesavions/">
+        <form method="post" action="/traitementtypesavions/" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_ul}}
     <input type="submit" value="envoyez les données"/>

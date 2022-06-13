@@ -10,7 +10,7 @@ Liste des Vols
 {% block article1 %}
 <ol>
     {% for vols in liste %}
-        <li> {{vols}} <a href="/vols/update/{{vols.id}}/"> Update </a></li>
+        <li> {{vols}} <a href="/updatevols/{{vols.id}}/"> Update </a></li>
     {% endfor %}
 </ol>
 {% endblock %}

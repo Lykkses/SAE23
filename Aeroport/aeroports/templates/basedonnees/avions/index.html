@@ -10,7 +10,7 @@ Liste des Avions
 {% block article1 %}
 <ol>
     {% for avions in liste %}
-        <li> {{avions}} <a href="/avions/update/{{avions.id}}/"> Update </a></li>
+        <li> {{avions}} <a href="/updateavions/{{avions.id}}/"> Update </a></li>
     {% endfor %}
 </ol>
 {% endblock %}

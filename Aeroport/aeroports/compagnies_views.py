@@ -36,7 +36,7 @@ def affiche(request, id):
 def update(request, id):
     compagnies = models.Compagnies.objects.get(pk=id)
     form = CompagniesForm(compagnies.dico())
-    return render(request, 'basedonne/compagnies/update.html', {'form': form, 'id': id})
+    return render(request, 'basedonnees/compagnies/update.html', {'form': form, 'id': id})
 
 
 def updatetraitement(request, id):

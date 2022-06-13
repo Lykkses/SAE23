@@ -32,7 +32,7 @@ class CompagniesForm(ModelForm):
             "pays_de_rattachement" : _("Le pays de la compagnie aérienne"),
         }
 
-class TypesavionForm(ModelForm):
+class TypeavionForm(ModelForm):
     class Meta:
         model = models.Typeavions
         fields = ("id", "marque", "model", "description", "image", "longueurpistenecessaire")
