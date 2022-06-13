@@ -4,7 +4,7 @@ h1{
 .bodyFORM{
 	margin-left: 20px;
 	margin-right: 20px;
-	background-image: ;
+	background-image:url("/static/img/Sky.jpg") ;
 	background-repeat: no-repeat;
 	background-size: 100%;
 	background-color: lightblue;
@@ -16,10 +16,8 @@ h1{
 	padding-top: 1.25%;
 	margin-bottom: 1%;
 }
-
-.article1 {
-	background-color: white;
-	border-radius: 10px;
+.article1{
+    border-radius: 10px;
 	box-shadow:2px 2px 6px rgba(0,0,0,0.3);
 	border:2px solid black;
 	padding-left: 2.5%;
@@ -30,6 +28,33 @@ h1{
 	margin-right: 10% ;
 	margin-top:1.5%;
 }
+
+.article1 {
+     background: linear-gradient(219deg, #04f3d6, #04f1f3, #04dcf3, #04d1f3, #04bcf3);
+    background-size: 1000% 1000%;
+
+    -webkit-animation: AnimationName 10s ease infinite;
+    -moz-animation: AnimationName 10s ease infinite;
+    animation: AnimationName 10s ease infinite;
+}
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+@keyframes AnimationName {
+    0%{background-position:88% 0%}
+    50%{background-position:13% 100%}
+    100%{background-position:88% 0%}
+}
+
+
 :root{
 	--hauteur-menu: 60px;
 }
