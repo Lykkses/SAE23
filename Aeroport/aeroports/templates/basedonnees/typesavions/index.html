@@ -10,7 +10,7 @@ Liste des Types d'Avions
 {% block article1 %}
 <ol>
     {% for typesavions in liste %}
-        <li> {{typesavions}} <a href="/updatetypesavions/{{typesavions.id}}/"> Update </a> <img src="/media/{{typesavions.image}}"></li>
+        <li> {{typesavions}} <a href="/updatetypesavions/{{typesavions.id}}/" style="color:#000000"> Update </a> <a href="/affichetypesavions/{{vols.id}}/" style="color:#000000"> Other informations </a><a href="/deletetypesavions/{{vols.id}}/" style="color:#000000"> Delete </a><img src="/media/{{typesavions.image}}"></li>
     {% endfor %}
 </ol>
 {% endblock %}

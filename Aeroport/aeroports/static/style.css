@@ -1,6 +1,8 @@
-h1{
-    color: blue;
+h1 {
+     color: lightblue;
+     font-family:Calibri;
 }
+
 .bodyFORM{
 	margin-left: 20px;
 	margin-right: 20px;
@@ -9,6 +11,7 @@ h1{
 	background-size: 100%;
 	background-color: lightblue;
 }
+
 .grandtitreFORM{
 	text-align: center;
 	font-size: 275%;
@@ -33,7 +36,7 @@ h1{
     padding-top: 1.5%;
 }
 
-.article1 {
+/*.article1 {
      background: linear-gradient(219deg, #04f3d6, #04f1f3, #04dcf3, #04d1f3, #04bcf3);
     background-size: 1000% 1000%;
 
@@ -57,7 +60,7 @@ h1{
     50%{background-position:13% 100%}
     100%{background-position:88% 0%}
 }
-
+*/
 :root{
 	--hauteur-menu: 60px;
 }
@@ -84,7 +87,7 @@ nav ul {
 }
   
 nav > ul > li {
-	background-color: white;
+	/*background-color: white;*/
 	position: relative;
 	height: 100%;
 	flex: 1;
@@ -167,4 +170,26 @@ nav > ul > li:hover > a{
 }
 .menu-deroulant:hover > .sous-menu {
 	animation: apparitionSousMenu 1s forwards;
+}
+
+img{
+    width: 150px;
+    transition: transform .1s;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+
+}
+
+img:hover{
+-ms-transform: scale(1.5); /* IE 9 */
+-webkit-transform: scale(1.5); /* Safari 3-8 */
+transform: scale(1.5);
+}
+
+
+
+a{
+    padding-left:20%;
 }

@@ -1,10 +1,10 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Aéroport
+Airports
 {% endblock %}
 
 {% block title2 %}
-Saisie d'un nouvel Aeroport
+Add an new Airport
 {% endblock %}
 
 {% block article1 %}
@@ -12,7 +12,7 @@ Saisie d'un nouvel Aeroport
         <form method="post" action="/traitement/">
     {% csrf_token %}
     {{form.as_ul}}
-    <input type="submit" value="envoyez les données"/>
+    <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
@@ -20,6 +20,6 @@ Saisie d'un nouvel Aeroport
 
 {% block article2 %}
     <nav class="navFORM">
-            <a href="/indexaeroport/" style="color: black"> Liste des Aeroports </a>
+            <a href="/indexaeroport/" style="color: black"> List of Airports </a>
 	</nav>
 {% endblock %}

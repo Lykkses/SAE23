@@ -1,10 +1,10 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Types d'Avions
+Palnes Types
 {% endblock %}
 
 {% block title2 %}
-Saisie d'un nouveau type d'Avion
+Add an new Planes Types
 {% endblock %}
 
 {% block article1 %}
@@ -12,7 +12,7 @@ Saisie d'un nouveau type d'Avion
         <form method="post" action="/traitementtypesavions/" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_ul}}
-    <input type="submit" value="envoyez les données"/>
+    <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
@@ -20,6 +20,6 @@ Saisie d'un nouveau type d'Avion
 
 {% block article2 %}
     <nav class="navFORM">
-            <a href="/indextypesavions/" style="color: black"> Liste des Types d'Avions </a>
+            <a href="/indextypesavions/" style="color: black"> List of Planes Types </a>
 	</nav>
 {% endblock %}
