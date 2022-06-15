@@ -29,8 +29,7 @@ def index(request):
 
 def affiche(request, id):
     pistesatterissage = models.Pistes.objects.get(pk=id)
-    liste = models.Aeroports.objects.filter(aeroport=id)
-    return render(request, 'basedonnees/pistesatterissage/affiche.html', {"pistesatterissage": pistesatterissage, 'liste': liste})
+    return render(request, 'basedonnees/pistesatterissage/affiche.html', {"pistesatterissage": pistesatterissage})
 
 
 def update(request, id):

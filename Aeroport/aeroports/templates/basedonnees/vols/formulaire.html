@@ -9,17 +9,13 @@ Add a new Flights
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitementvols/">
+        <form class="formulaire" method="post" action="/traitementvols/">
     {% csrf_token %}
     {{form.as_ul}}
+            <br>
     <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
 {% endblock %}
 
-{% block article2 %}
-    <nav class="navFORM">
-            <a href="/indexvols/" style="color: black"> List of Flights </a>
-	</nav>
-{% endblock %}

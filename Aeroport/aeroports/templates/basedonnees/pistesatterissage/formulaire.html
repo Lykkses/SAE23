@@ -9,17 +9,13 @@ Add a new Runway
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitementpistes/">
+        <form class="formulaire" method="post" action="/traitementpistes/">
     {% csrf_token %}
     {{form.as_ul}}
+            <br>
     <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
 {% endblock %}
 
-{% block article2 %}
-    <nav class="navFORM">
-            <a href="/indexpistes/" style="color: black"> List of Runways </a>
-	</nav>
-{% endblock %}

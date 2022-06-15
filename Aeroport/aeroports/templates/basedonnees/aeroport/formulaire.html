@@ -9,17 +9,13 @@ Add an new Airport
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitement/">
+        <form class="formulaire" method="post" action="/traitement/">
     {% csrf_token %}
     {{form.as_ul}}
+            <br>
     <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
 {% endblock %}
 
-{% block article2 %}
-    <nav class="navFORM">
-            <a href="/indexaeroport/" style="color: black"> List of Airports </a>
-	</nav>
-{% endblock %}

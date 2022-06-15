@@ -9,17 +9,13 @@ Add an new Planes
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitementavions/">
+        <form class="formulaire" method="post" action="/traitementavions/">
     {% csrf_token %}
     {{form.as_ul}}
+            <br>
     <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
 {% endblock %}
 
-{% block article2 %}
-    <nav class="navFORM">
-            <a href="/indexavions/" style="color: black"> List of Planes </a>
-	</nav>
-{% endblock %}

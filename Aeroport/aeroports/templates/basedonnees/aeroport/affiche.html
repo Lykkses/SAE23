@@ -1,12 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    {% load static %}
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="{%static '/style.css'%}">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'basedonnees/main.html' %}
+{% block title %}
+Airports
+{% endblock %}
 
-</body>
-</html>
+{% block title2 %}
+Add an new Airport
+{% endblock %}
+
+{% block article1 %}
+{{aeroport}}
+{% endblock %}

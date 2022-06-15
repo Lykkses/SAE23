@@ -29,9 +29,7 @@ def index(request):
 
 def affiche(request, id):
     avions = models.Avions.objects.get(pk=id)
-    liste = models.Typeavions.objects.filter(avions_id=id)
-    liste2 = models.Compagnies.objects.filter(avions_id=id)
-    return render(request, 'basedonnees/avions/affiche.html', {"avions": avions, 'liste': liste, 'liste2': liste2})
+    return render(request, 'basedonnees/avions/affiche.html', {"avions": avions})
 
 
 def update(request, id):

@@ -10,7 +10,7 @@ def formulaire(request):
     else:
         form = AeroportsForm()
         id = ""
-        return render(request, "basedonnees/aeroport/formulaire.html", {"form": form})
+        return render(request, "basedonnees/aeroport/formulaire.html", {"form": form, "id": id})
 
 def traitement(request):
     lform = AeroportsForm(request.POST)
@@ -28,8 +28,7 @@ def index(request):
 
 def affiche(request, id):
     aeroport = models.Aeroports.objects.get(pk=id)
-    liste = models.Aeroports.objects.filter(avions=id)
-    return render(request, 'basedonnees/aeroport/affiche.html', {"aeroport": aeroport, 'liste': liste})
+    return render(request, 'basedonnees/aeroport/affiche.html', {"aeroport": aeroport})
 
 
 def update(request, id):
@@ -44,12 +43,12 @@ def updatetraitement(request, id):
         aeroport = lform.save(commit=False)
         aeroport.id = id
         aeroport.save()
-        return HttpResponseRedirect('/aeroports/')
+        return HttpResponseRedirect('/aeroports/indexaeroport/')
     else:
         return render(request, "aeroport/update.html", {"form": lform, "id": id})
 
 
 def delete(request, id):
-    aeroport = models.Aeroports.objects.get(pk=id)
-    aeroport.delete()
+    aeroports = models.Aeroports.objects.get(pk=id)
+    aeroports.delete()
     return HttpResponseRedirect('/aeroports/indexaeroport/')

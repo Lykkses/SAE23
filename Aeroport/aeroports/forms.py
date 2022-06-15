@@ -63,8 +63,8 @@ class VolsForm(ModelForm):
         labels = {
             "id" : _("Flight number"),
             "avions" : _("Aircraft model"),
-            "pilote" : _("Nom et prénom du pilote"),
-            "aeroport_de_depart" : _("Driver's first and last name"),
+            "pilote" : _("Driver's first and last name"),
+            "aeroport_de_depart" : _("Departure airport name"),
             "date_de_depart" : _("Date of departure"),
             "heure_de_depart" : _("Departure time"),
             "aeroport_de_darriver" : _("Arrival airport name"),

@@ -9,17 +9,13 @@ Add an new Planes Types
 
 {% block article1 %}
     <article>
-        <form method="post" action="/traitementtypesavions/" enctype="multipart/form-data">
+        <form class="formulaire" method="post" action="/traitementtypesavions/" enctype="multipart/form-data">
     {% csrf_token %}
     {{form.as_ul}}
+            <br>
     <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
 {% endblock %}
 
-{% block article2 %}
-    <nav class="navFORM">
-            <a href="/indextypesavions/" style="color: black"> List of Planes Types </a>
-	</nav>
-{% endblock %}
