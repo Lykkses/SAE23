@@ -1,3 +1,4 @@
+
 h1 {
      color: lightblue;
      font-family:Calibri;
@@ -44,6 +45,7 @@ h1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
 }
 
 /*.article1 {
@@ -77,8 +79,7 @@ h1 {
 * {
 	margin: 0px;
 	padding: 0px;
-	font-family: Montserrat, sans-serif;
-
+    font-family: 'Poppins', sans-serif;
 }
 nav {
 	width: 100%;
@@ -224,12 +225,12 @@ input {
 }
 
 .indexaff{
-    /*background-color: red;*/
+    background-color: ;
     display: flex;
     justify-content: space-between;
     width: 35%;
     margin: 10px 10px;
-
+    font-size: 15px;
 }
 .boutons{
     border:2px solid black;
@@ -242,6 +243,7 @@ input {
 }
 .listeindex{
     width: 60%;
+    font-size: 17px;
 }
 /*testhjuikafzedghjkafzegliug  sfdvsdvsdvfdsdfsdfsdfsf azefdliu    dfg aefzlugfihzefaliuokfeg*/
 /*DERNIèRE VERSION DANIEL DEMIRBAG*/
