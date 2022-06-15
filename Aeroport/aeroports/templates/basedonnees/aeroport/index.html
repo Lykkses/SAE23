@@ -10,7 +10,7 @@ Liste des Aeroports
 {% block article1 %}
 <ol>
     {% for aeroport in liste %}
-        <li> {{aeroport}} <a href="/update/{{aeroport.id}}/"> Update </a></li>
+        <li> {{aeroport}} <a href="/update/{{aeroport.id}}/" style="color:#000000"> Update </a><a href="/affiche/{{aeroport.id}}/" style="color:#000000"> Other informations </a><a href="/delete/{{aeroport.id}}/" style="color:#000000"> Delete </a></li>
     {% endfor %}
 </ol>
 {% endblock %}

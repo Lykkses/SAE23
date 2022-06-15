@@ -10,7 +10,7 @@ Liste des Pistes
 {% block article1 %}
 <ol>
     {% for pistes in liste %}
-        <li> {{pistes}} <a href="/updatepistes/{{pistes.id}}/"> Update </a></li>
+        <li> {{pistes}} <a href="/updatepistes/{{pistes.id}}/" style="color:#000000"> Update </a><a href="/affichepistes/{{pistes.id}}/" style="color:#000000"> Other informations </a><a href="/deletepistes/{{pistes.id}}/" style="color:#000000"> Delete </a></li>
     {% endfor %}
 </ol>
 {% endblock %}

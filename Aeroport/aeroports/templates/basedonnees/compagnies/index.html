@@ -10,7 +10,7 @@ Liste des Compagnies
 {% block article1 %}
 <ol>
     {% for compagnies in liste %}
-        <li> {{compagnies}} <a href="/updatecompagnies/{{compagnies.id}}/"> Update </a> </li>
+        <li> {{compagnies}} <a href="/updatecompagnies/{{compagnies.id}}/" style="color:#000000"> Update </a><a href="/affichecompagnies/{{compagnies.id}}/" style="color:#000000"> Other informations </a><a href="/deletecompagnies/{{compagnies.id}}/" style="color:#000000"> Delete </a></li>
     {% endfor %}
 </ol>
 {% endblock %}

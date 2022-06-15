@@ -7,9 +7,9 @@ class AeroportsForm(ModelForm):
         model = models.Aeroports
         fields = ("id", "nom", "pays")
         labels = {
-            "id" : _("Numéro de l'aéroport"),
-            "nom" : _("Nom de l'aéroport"),
-            "pays" : _("Pays de l'aéroport"),
+            "id" : _("Airport number"),
+            "nom" : _("Airport name"),
+            "pays" : _("Airport Country"),
         }
 
 class PistesForm(ModelForm):
@@ -17,19 +17,19 @@ class PistesForm(ModelForm):
         model = models.Pistes
         fields = ("numero", "aeroport", "longueur")
         labels = {
-            "numero" : _("Numéro de piste"),
-            "aeroport" : _("Aeroport"),
-            "longueur" : _("L'ongueur de la piste d'attérissage"),
+            "numero" : _("Track number"),
+            "aeroport" : _("Airport"),
+            "longueur" : _("The length of the landing strip"),
         }
 class CompagniesForm(ModelForm):
     class Meta:
         model = models.Compagnies
         fields = ("id", "nom", "description", "pays_de_rattachement")
         labels = {
-            "id" : _("Numéro de la compagnie"),
-            "nom" : _("Nom de la compagnie"),
-            "description" : _("Description de la compagnie"),
-            "pays_de_rattachement" : _("Le pays de la compagnie aérienne"),
+            "id" : _("Company number"),
+            "nom" : _("Company Name"),
+            "description" : _("Company Description"),
+            "pays_de_rattachement" : _("The country of the airline"),
         }
 
 class TypeavionForm(ModelForm):
@@ -37,12 +37,12 @@ class TypeavionForm(ModelForm):
         model = models.Typeavions
         fields = ("id", "marque", "model", "description", "image", "longueurpistenecessaire")
         labels = {
-            "id" : _("Numéro de l'avion"),
-            "marque" : _("Marque de l'avion"),
-            "model" : _("Model de l'avion"),
-            "description" : _("Description de l'avion"),
-            "image" : _("Image de l'avion"),
-            "longueurpistenecessaire" : _("Longueur de la piste d'attérissage"),
+            "id" : _("Aircraft number"),
+            "marque" : _("Aircraft brand"),
+            "model" : _("Aircraft model"),
+            "description" : _("Description of the aircraft"),
+            "image" : _("Airplane picture"),
+            "longueurpistenecessaire" : _("Airstrip length"),
         }
 
 class AvionsForm(ModelForm):
@@ -50,10 +50,10 @@ class AvionsForm(ModelForm):
         model = models.Avions
         fields = ("id", "nom", "compagnies", "model")
         labels = {
-            "id" : _("Numéro d'avion"),
-            "nom" : _("Nom de l'avion"),
-            "compagnies" : _("Nom de la compagnie"),
-            "model" : _("Model de l'avion"),
+            "id" : _("Aircraft number"),
+            "nom" : _("Aircraft name"),
+            "compagnies" : _("Company Name"),
+            "model" : _("Aircraft model"),
         }
 
 class VolsForm(ModelForm):
@@ -61,13 +61,13 @@ class VolsForm(ModelForm):
         model = models.Vols
         fields = ("id", "avions", "pilote", "aeroport_de_depart", "date_de_depart", "heure_de_depart", "aeroport_de_darriver", "date_de_darriver", "heure_de_darriver")
         labels = {
-            "id" : _("Numéro de vol"),
-            "avions" : _("Modèle de l'avion"),
+            "id" : _("Flight number"),
+            "avions" : _("Aircraft model"),
             "pilote" : _("Nom et prénom du pilote"),
-            "aeroport_de_depart" : _("Nom de l'aéroport de départ"),
-            "date_de_depart" : _("Date de départ"),
-            "heure_de_depart" : _("Heure de départ"),
-            "aeroport_de_darriver" : _("Nom de l'aéroport d'arriver"),
-            "date_de_darriver" : _("Date d'arriver"),
-            "heure_de_darriver" : _("Heure d'arriver"),
+            "aeroport_de_depart" : _("Driver's first and last name"),
+            "date_de_depart" : _("Date of departure"),
+            "heure_de_depart" : _("Departure time"),
+            "aeroport_de_darriver" : _("Arrival airport name"),
+            "date_de_darriver" : _("Arrival date"),
+            "heure_de_darriver" : _("Arriving time"),
         }

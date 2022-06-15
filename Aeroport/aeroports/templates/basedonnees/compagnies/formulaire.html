@@ -1,10 +1,10 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Compagnies
+Companies
 {% endblock %}
 
 {% block title2 %}
-Saisie d'une nouvelle Compagnie
+Add an new Compagny
 {% endblock %}
 
 {% block article1 %}
@@ -12,7 +12,7 @@ Saisie d'une nouvelle Compagnie
         <form method="post" action="/traitementcompagnies/">
     {% csrf_token %}
     {{form.as_ul}}
-    <input type="submit" value="envoyez les données"/>
+    <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
@@ -20,6 +20,6 @@ Saisie d'une nouvelle Compagnie
 
 {% block article2 %}
     <nav class="navFORM">
-            <a href="/indexcompagnies/" style="color: black"> Liste des Compagnies </a>
+            <a href="/indexcompagnies/" style="color: black"> List of Companies </a>
 	</nav>
 {% endblock %}

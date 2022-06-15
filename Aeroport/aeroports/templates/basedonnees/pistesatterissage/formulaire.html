@@ -1,10 +1,10 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Pistes
+Runways
 {% endblock %}
 
 {% block title2 %}
-Saisie d'une nouvelle Piste
+Add a new Runway
 {% endblock %}
 
 {% block article1 %}
@@ -12,7 +12,7 @@ Saisie d'une nouvelle Piste
         <form method="post" action="/traitementpistes/">
     {% csrf_token %}
     {{form.as_ul}}
-    <input type="submit" value="envoyez les données"/>
+    <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
@@ -20,6 +20,6 @@ Saisie d'une nouvelle Piste
 
 {% block article2 %}
     <nav class="navFORM">
-            <a href="/indexpistes/" style="color: black"> Liste des Pistes </a>
+            <a href="/indexpistes/" style="color: black"> List of Runways </a>
 	</nav>
 {% endblock %}

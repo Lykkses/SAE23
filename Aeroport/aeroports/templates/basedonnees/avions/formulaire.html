@@ -1,10 +1,10 @@
 {% extends 'basedonnees/main.html' %}
 {% block title %}
-Avions
+Planes
 {% endblock %}
 
 {% block title2 %}
-Saisie d'un nouvel Avion
+Add an new Planes
 {% endblock %}
 
 {% block article1 %}
@@ -12,7 +12,7 @@ Saisie d'un nouvel Avion
         <form method="post" action="/traitementavions/">
     {% csrf_token %}
     {{form.as_ul}}
-    <input type="submit" value="envoyez les données"/>
+    <input type="submit" value="Send data"/>
         </form>
         </form>
     </article>
@@ -20,6 +20,6 @@ Saisie d'un nouvel Avion
 
 {% block article2 %}
     <nav class="navFORM">
-            <a href="/indexavions/" style="color: black"> Liste des Avions </a>
+            <a href="/indexavions/" style="color: black"> List of Planes </a>
 	</nav>
 {% endblock %}
