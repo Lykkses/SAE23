@@ -5,8 +5,7 @@ h1 {
 }
 
 .bodyFORM{
-	margin-left: 20px;
-	margin-right: 20px;
+
 	background-image:url("/static/images/Sky.jpg") ;
 	background-repeat: no-repeat;
 	background-size: 100%;
@@ -220,7 +219,7 @@ transform: scale(1.5);
 }
 input {
     height: 20px;
-    width: 400px;
+    width: 100%;
     border-radius: 7px;
 }
 
