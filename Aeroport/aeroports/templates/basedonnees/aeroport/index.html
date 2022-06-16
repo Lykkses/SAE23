@@ -12,9 +12,9 @@ Liste des Aeroports
     {% for aeroport in liste %}
     <li class="indexaff2"> <div class="listeindex">{{aeroport}} </div>
         <article class="indexaff">
-        <a class="boutons" href="/update/{{avions.id}}/" style="color:#000000"> Update </a>
-        <a class="boutons" href="/affiche/{{avions.id}}/" style="color:#000000"> Other informations </a>
-        <a class="boutons" href="/delete/{{avions.id}}/" style="color:#000000"> Delete </a>
+        <a class="boutons" href="/update/{{aeroport.id}}/" style="color:#000000"> Update </a>
+        <a class="boutons" href="/affiche/{{aeroport.id}}/" style="color:#000000"> Other informations </a>
+        <a class="boutons" href="/delete/{{aeroport.id}}/" style="color:#000000"> Delete </a>
         </article>
     </li>
     {% endfor %}
