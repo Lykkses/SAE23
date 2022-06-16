@@ -10,7 +10,7 @@ urlpatterns = [
     path('affiche/<int:id>/', views.affiche),
     path('update/<int:id>/', views.update),
     path('updatetraitement/<int:id>/', views.updatetraitement),
-    path('delete/<int:id>/', views.update),
+    path('delete/<int:id>/', views.delete),
 
     #Urls pour la partie avions
     path('indexavions/', avions_views.index),
